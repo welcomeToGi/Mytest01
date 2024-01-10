@@ -1,0 +1,55 @@
+{
+    "treeInfos": [
+        {
+            "uid": "a0",
+            "showStr": "场站总览",
+            "objectCode": "",
+            "isControl": true,
+            "childDatas": []
+        },
+        {
+            "uid": "a1",
+            "showStr": "风电监测",
+            "objectCode": "",
+            "isControl": true,
+            "childDatas": [
+                {
+                    "uid": "b0",
+                    "showStr": "风力发电机1",
+                    "objectCode": "",
+                    "isControl": true,
+                    "childDatas": []
+                },
+                {
+                    "uid": "b1",
+                    "showStr": "风力发电机2",
+                    "objectCode": "",
+                    "isControl": true,
+                    "childDatas": []
+                },
+                {
+                    "uid": "b2",
+                    "showStr": "风力发电机3",
+                    "objectCode": "",
+                    "isControl": true,
+                    "childDatas": []
+                },
+                {
+                    "uid": "b3",
+                    "showStr": "风力发电机4",
+                    "objectCode": "",
+                    "isControl": true,
+                    "childDatas": []
+                }
+            ]
+        },
+        {
+            "uid": "a2",
+            "showStr": "光伏监测",
+            "objectCode": "",
+            "isControl": true,
+            "childDatas": [		]
+        }
+    ]
+  
+}
