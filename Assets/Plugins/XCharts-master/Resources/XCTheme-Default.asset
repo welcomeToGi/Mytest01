@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThemeType: 0
   m_ThemeName: Default
-  m_Font: {fileID: 12800000, guid: ed1a8f31cbde4c44aac4161773923a24, type: 3}
-  m_TMPFont: {fileID: 11400000, guid: a7ad2c4e8ca4f1f468d0d4b4ae4e5ebd, type: 2}
+  m_Font: {fileID: 12800000, guid: 85a748facfceb454b9c15c7976ebef4d, type: 3}
+  m_TMPFont: {fileID: 0}
   m_ContrastColor:
     serializedVersion: 2
     rgba: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   - serializedVersion: 2
     rgba: 4291194964
   - serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4285910161
   - serializedVersion: 2
     rgba: 4284008698
   - serializedVersion: 2
@@ -102,7 +102,7 @@ MonoBehaviour:
     m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_TextBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
     m_FontSize: 20
-    m_TMPFont: {fileID: 11400000, guid: a7ad2c4e8ca4f1f468d0d4b4ae4e5ebd, type: 2}
+    m_TMPFont: {fileID: 0}
     m_LineType: 0
     m_LineWidth: 0.8
     m_LineColor:

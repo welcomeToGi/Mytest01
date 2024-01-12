@@ -26,7 +26,7 @@ public class CreateTreeView : MonoBehaviour
         //加载表格
         //DataTable dataTable = LoadExcelData.ReadExcel(Application.streamingAssetsPath + "/属性面板/生产分离器.xlsx", 0);
         //mCreateTable.CreateTable(dataTable, transform.XuYiFindChild("Info"));
-        //Camera.main.GetComponent<CameraMotion>().LookAtObj(init);
+        Camera.main.GetComponent<CameraMotion>().LookAtObj(init);
 
     }
     private ItemRoot CreateTreeItemRootCallback(ChildDatas info, TreeRoot parent)
@@ -41,32 +41,6 @@ public class CreateTreeView : MonoBehaviour
         //if (EquipMgr.Instance.transform.XuYiFindChild("3DUI_" + info.showStr) != null)
         //{
         //    item.TextopenGameObjects.Add(EquipMgr.Instance.transform.XuYiFindChild("3DUI_" + info.showStr).gameObject);
-        //}
-
-        //var myimage = item.transform.XuYiFindChild("Image").GetComponent<Image>();
-        //if (myimage != null)
-        //{
-        //    string targetStr = "Prefabs/UI/icon_" + info.showStr;
-        //    if (info.showStr.Contains("风力发电机"))
-        //    {
-        //        targetStr = "Prefabs/UI/icon_充电桩监测";
-        //    }
-        //    else if(info.showStr== "黄河湾风景区" || info.showStr == "村委会" 
-        //        || info.showStr == "村委周边建筑" || info.showStr == "培训学校"
-        //        || info.showStr == "兰考总图")
-        //    {
-        //        targetStr = "Prefabs/UI/icon_张庄";
-        //    }
-        //    else if (info.showStr.Contains("雷集变电站"))
-        //    {
-        //        targetStr = "Prefabs/UI/icon_储能监测";
-        //    }
-        //    var myspir= Resources.Load<Sprite>(targetStr);
-        //    if (myspir!=null)
-        //    {
-        //        myimage.sprite = myspir;
-        //        myimage.SetNativeSize();
-        //    }
         //}
 
         //if (transform.XuYiFindChild("场站总览_页面_右侧") != null)

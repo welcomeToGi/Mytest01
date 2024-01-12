@@ -7,7 +7,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using XCharts.Runtime;
 using DG.Tweening;
 public class Point2dPos : MonoBehaviour
 {

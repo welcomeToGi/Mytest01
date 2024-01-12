@@ -60,7 +60,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   WindSpeedLevel: 0.85
   WindBendingLevel: 0.2
-  WindIntensity: 1
+  WindIntensity: 0
   WeatherEffect: {fileID: 198957874608633202, guid: dbee897552d49b2419fbe8ea3ada9baa, type: 3}
   ParticleEffectAmount: 1500
   ParticleEffectVector: {x: 0, y: 0, z: 0}

@@ -13,11 +13,13 @@ using UnityEngine.UI;
 
 public class MyWeatherTest : MonoBehaviour
 {
-    public NM_Wind myWind;
-    private GlobalSnow glowbleSnow;
     public float snowTime = 120f;
+    //public NM_Wind myWind;
+    [SerializeField] WeatherDataConfig weatherData; //天气数据 我们配置的文件拖入即可
+
+    private GlobalSnow glowbleSnow;
     private float snowCount = 0;
-    private Toggle[] toWeaToggles;   
+    private Toggle[] toWeaToggles;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,15 +50,6 @@ public class MyWeatherTest : MonoBehaviour
         {
             toggle.onValueChanged.AddListener(ison => ChangeWeatherUI(ison, toggle.name));
         }
-        //var canvas = transform.GetComponentInParent<Canvas>();
-        //if (canvas != null)
-        //{
-        //    var weather_first = canvas.transform.GetComponentInChildren<CityWeather>();
-        //    weather_first.OnGetWeather += () =>
-        //    {
-        //        //myWeatherText02 = canvas.transform.XuYiFindChild("天气").GetComponent<TextMeshProUGUI>();
-        //    };
-        //}
     }
     /// <summary>
     /// 天气选择
@@ -67,42 +60,31 @@ public class MyWeatherTest : MonoBehaviour
     {
         if (weatherbool)
         {
-            myWind.WindSpeed = 45;
-            glowbleSnow.enabled = false;
-            RenderSettings.fog = false;
-            glowbleSnow.snowAmount = 0;
-            //glowbleSnow.snowfallSystem.Stop();
-            int weatherIndex = 0;
-            switch (c_wetherName)
+            //根据传过来的天气名称找到对应的插件天气下标
+            int index = 0;
+            for (int i = 0; i < weatherData.weatherData.Count; i++)
             {
-                case "大雪":
-                    {
-                        weatherIndex = 3;
-                        glowbleSnow.enabled = true;
-                        glowbleSnow.snowAmount = 0;
-                        snowCount = 0;
-                        //glowbleSnow.snowfallSystem.Play();
-                        break;
-                    }
-                case "大风":
-                    {
-                        myWind.WindSpeed = 250;
-                        weatherIndex = 1;
-                        break ;
-                    }
-                case "大雾":
-                    {
-                        weatherIndex = 2;
-                        RenderSettings.fog = true;
-                        break;
-                    }
-                case "大雨":
-                    {
-                        weatherIndex = 4;
-                        break;
-                    }
+                //名称相同 获取天气下标
+                if (weatherData.weatherData[i].weatherName.Equals(c_wetherName))
+                {
+                    index = weatherData.weatherData[i].uniStormWeatherIndex;
+                    break;
+                }
             }
-            UniStormManager.Instance.ChangeWeatherWithTransition(UniStormSystem.Instance.AllWeatherTypes[weatherIndex]);
+
+            //根据插件天气下标，获取天气
+            WeatherType weather = UniStormSystem.Instance.AllWeatherTypes[index];
+            UniStormManager.Instance.ChangeWeatherInstantly(weather); //直接切换
+
+            glowbleSnow.enabled = false;
+            glowbleSnow.snowAmount = 0;
+
+            if (c_wetherName=="大雪")
+            {
+                glowbleSnow.enabled = true;
+                glowbleSnow.snowAmount = 0;
+                snowCount = 0;
+            }
         }
     }
     //时间实时
